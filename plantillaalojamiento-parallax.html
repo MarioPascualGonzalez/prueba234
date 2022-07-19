@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Turismo Llanera</title>
+    <meta name="description" content="Llanera un turismo sostenible.">
+    <link href="../css/demo.css" rel="stylesheet">
+    <link rel="icon" href="../escudo.png" type="image/png" />
+
+
+    <!-- Object Fit polyfill -->
+    <script src="https://unpkg.com/object-fit-images/dist/ofi.min.js"></script>
+
+    <!-- Lazy Load images -->
+    <!-- <script src="https://unpkg.com/object-fit-images/dist/ofi.min.js"></script> -->
+
+    <!-- Jarallax -->
+    <link href="../dist/jarallax.css" rel="stylesheet">
+    <script src="../dist/jarallax.js"></script>
+    <script src="../dist/jarallax-video.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48958097-8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-48958097-8');
+    </script>
+
+    <!-- Flickity -->
+    <!--
+    <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    -->
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|typicons);
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        p {
+            text-align: justify
+        }
+
+        #menu {
+            position: fixed;
+            top: 0;
+            z-index: 1010;
+            width: 100%;
+            height: 1.5em;
+        }
+
+        #menu,
+        #menu2 {
+            background-color: white;
+            color: grey
+        }
+
+        .menu3 {
+            text-decoration: none;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-left: 5px;
+            padding-right: 5px
+        }
+
+        .menu3:hover {
+            background-color: grey;
+            color: white
+        }
+
+        .enlace:hover {
+            cursor: pointer;
+           box-shadow: 0px 0px 16px blue;
+                
+        }
+
+        .muestra {}
+
+        header {
+            width: 100%;
+            height: 50px;
+            background: #333;
+            color: #fff;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .contenedor {
+            width: 100%;
+            margin: auto;
+           background-color: #333;
+          
+}
+        }
+
+        .iz{float: left}
+
+        header .contenedor {
+            display: table;
+        }
+
+
+        @media (min-width:768px) {
+            
+            .sociales {
+                width: auto;
+            }
+
+            footer .contenedor {
+                justify-content: space-between;
+            }
+        }
+
+
+        @media (min-width:1024px) {
+            .contenedor {
+                width: 100%;
+            }
+        }
+
+
+        #blog h3,
+        h4 {
+            text-align: center;
+        }
+
+        #blog .contenedor {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #blog article {
+            margin: 15px;
+        }
+
+        #blog img {
+            width: 100%;
+            max-width: 280px;
+        }
+
+        #banner {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        #banner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #banner .contenedor {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #fff;
+        }
+
+        #banner h2 {
+            font-size: 28px;
+        }
+
+        #banner a {
+            display: block;
+            width: 100px;
+            color: black;
+            text-decoration: none;
+            padding: 7px;
+            margin-top: 10px;
+            border: 3px solid black;
+        }
+
+        #banner a:hover {
+            background: rgba(51, 51, 51, 0.5);
+        }
+
+        @media (min-width:480px) {
+            #banner h2 {
+                font-size: 40px;
+            }
+
+            #banner a {
+                margin-top: 25px;
+            }
+        }
+
+        @media (min-width:768px) {
+            #banner {
+                height: 300px;
+                overflow: hidden;
+            }
+
+            #banner img {
+                height: auto;
+                margin-top: -100px;
+            }
+        }
+
+        @media (min-width:1024px) {
+            #banner img {
+                margin-top: -200px;
+            }
+        }
+
+        #info {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #info .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .info-pet {
+            margin: 20px;
+        }
+
+        .info-pet img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 7px solid #fff;
+        }
+
+        @media (min-width:480px) {
+            .info-pet {
+                width: 40%;
+            }
+        }
+
+        @media (min-width:1024px) {
+            .info-pet {
+                width: auto;
+            }
+        }
+
+        #menu-bar {
+            display: none;
+        }
+
+        header label {
+            float: right;
+            font-size: 28px;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+
+        .menu {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(51, 51, 51, 0.9);
+            transition: all 0.5s;
+            transform: translateX(-100%);
+        }
+
+        .menu a {
+            display: block;
+            color: #fff;
+            height: 50px;
+            text-decoration: none;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        #menu-bar:checked~.menu {
+            transform: translateX(0%);
+        }
+
+        @media (min-width:1024px) {
+            .menu {
+                position: static;
+                width: auto;
+                height: auto;
+                transform: translateX(0%);
+                justify-content: center; 
+                display: flex;
+            }
+
+            .menu a {
+                border: none;
+            }
+
+            header label {
+                display: none;
+            }
+        }
+
+        .naranja {
+            color: black
+        }
+        .menu-imagen{
+            width: 100%;
+            height: 100%
+        }
+        .menu-imagen2:hover {
+            cursor: pointer;
+           box-shadow: 0px 0px 16px blue;
+                
+        }
+        .item row-1{background-color: black}
+          #sin{text-decoration: none;
+        color:white}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <div style="display:flex;align-items: center;justify-content: center;padding-top: 10px "> 
+                <img width="60px" src="../escudo.png"><a href="../alojamiento.html" id="sin">
+                <h1 style="text-align: center;width:auto;  vertical-align:middle;">TURISMO LLANERA</h1></a>
+            </div>
+
+            <input type="checkbox" id="menu-bar">
+            <label class="fontawesome-align-justify" for="menu-bar"></label>
+            <nav class="menu" width="100%">
+              
+                <a href="alojamiento.html">ALOJAMIENTO</a>
+                <a  href="restbar.html">BARES Y RESTAURANTES</a>
+                <a href="rutas.html">RUTAS</a>
+                <a  href="actividades.html">ACTIVIDADES</a>
+                <a href="fiestas.html">FIESTAS</a>
+                <a  href="contacto.html">CONTACTO</a>
+            </nav>
+        </div>
+    </header>
+    
+
+    <div class="jarallax" class="muestra">
+        <img class="jarallax-img" src="../alojamiento/casa-albite/195452937.jpg" alt="Casa Albite exterior">
+        <div class="demo-table">
+            <div class="demo-table-cell"  style="text-align: center">
+                <h1 style="text-align: center">Casa Bosque Albite</h1>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="demo-carousel">
+        <div class="demo-carousel-item jarallax" data-speed="0.1">
+            <img class="jarallax-img" src="images/image3.jpg" alt="">
+        </div>
+        <div class="demo-carousel-item jarallax" data-speed="0.4" data-video-src="mp4:video/video1.mp4,webm:video/local-video.webm,ogv:video/local-video.ogv">
+            <img class="jarallax-img" src="video/local-video.png" alt="">
+        </div>
+        <div class="demo-carousel-item jarallax" data-speed="0.2">
+            <img class="jarallax-img" src="images/image6.jpg" alt="">
+        </div>
+        <div class="demo-carousel-item jarallax" data-speed="0.3">
+            <img class="jarallax-img" src="images/image5.jpg" alt="">
+        </div>
+    </div>--->
+
+    <div class="demo-gap">
+        <div class="container">
+            <p>La Casa Bosque Albite cuenta con jardín, piscina privada y vistas a la montaña, y se encuentra en Llanera.</p>
+            <p>El establecimiento ofrece bicicletas gratuitas, piscina al aire libre de temporada, vistas a la piscina y WiFi gratuita.</p>
+
+<p>Esta casa rural de 4 dormitorios incluye aire acondicionado, cocina, zona de estar y TV de pantalla plana vía satélite.</p>
+
+<p>La casa rural tiene bañera de hidromasaje. Además, la Casa Bosque Albite alberga una piscina cubierta.</p>
+
+<p>La Casa Bosque Albite está a 21 km de Gijón y a 18 km del aeropuerto de Asturias, el más cercano.</p>
+            <br>
+
+        </div>
+    </div>
+    <div class="jarallax">
+        <img class="jarallax-img" src="../alojamiento/casa-albite/195452826.jpg" alt="">
+    </div>
+    <div class="demo-gap">
+        <h2>En el corazon del campo asturiano.</h2>
+    </div>
+    <div class="jarallax" data-speed="0.2">
+        <img class="jarallax-img" src="../alojamiento/casa-albite/195452752.jpg" alt="">
+    </div>
+    <div class="demo-gap">
+        <h2>Piscina cubierta para disfrutar en todas las condiciones</h2>
+    </div>
+    <div class="jarallax" data-speed="-0.2">
+        <img class="jarallax-img" src="../alojamiento/casa-albite/170998296.jpg" alt="">
+    </div>
+   
+          <div class="demo-gap">
+        <h2>Para unas vacaciones activas y saludables</h2>
+    </div>
+
+
+    <!--<div class="demo-gap">-->
+    <!--<h2>Scale and Opacity</h2>-->
+    <!--</div>-->
+    <!--<div class="jarallax" data-speed="0.2" data-type="scale-opacity" style="background-image: url(images/image3.jpg);"></div>-->
+    <!--<div class="jarallax" data-type="scroll-opacity" style="background-image: url(images/image4.jpg);"></div>-->
+    <!--<div class="jarallax" data-type="opacity" style="background-image: url(images/image5.jpg);"></div>-->
+    <!--<div class="jarallax" data-speed="-0.2" data-type="scale" style="background-image: url(images/image6.jpg);"></div>-->
+
+  
+    <div class="jarallax" data-speed="0" data-video-src="mp4:../alojamiento/casa-albite/amanecer.mp4">
+
+    </div>
+    <div class="demo-gap">
+        <h2>Disfruta de un entorno mágico </h2>
+    </div>
+    <div class="jarallax" data-speed="0" data-video-src="mp4:../alojamiento/casa-albite/bicis.mp4">
+
+    </div>
+    <div class="demo-gap">
+        <h2>Construyendo hermosos recuerdos</h2>
+    </div>
+    <div class="jarallax" data-speed="0" data-video-src="mp4:../alojamiento/casa-albite/familia.mp4">
+
+    </div>
+    <div class="demo-gap">
+        <h2>Unas maravillosas vacaciones en familia</h2>
+    </div>
+    <div class="jarallax" data-speed="1.2" data-video-src="mp4:/alojamiento/casa-albite/gorrion.mp4"></div>
+    <div class="demo-gap">
+        <h2>Ven y disfruta</h2>
+    </div>
+    <div class="jarallax" data-speed="1.4">
+        <img class="jarallax-img" src="/alojamiento/casa-albite/arboles.jpg" alt="">
+    </div>
+
+    <div class="demo-content demo-gap">
+        <div class="container">
+            <h3><strong>Casa Bosque Albite</strong></h3>
+            <h2>Piñera, 17 </h2>
+            <h2>(San Cucao Llanera), 33425 Llanera</h2>
+            <h2>Asturias</h2>
+                <h2> España</h2>
+
+            <div class="jarallax-keep-img demo-float-left" data-speed="0.5">
+                <img class="jarallax-img" src="images/image4.jpg" alt="" width="400">
+            </div>
+
+            
+                <div class="jarallax-keep-img demo-float-right" data-speed="0.8">
+                    <img class="jarallax-img" src="images/image8.jpg" alt="" width="400">
+                </div>
+
+                
+
+    </div>
+    <div class="demo-gap">
+        <p style="text-align: center"><img src="../images/asturias.png" width="100px"></p>
+        <h2>Y todo ello en el corazón del Paraiso Natural</h2>
+    </div>
+    <div class="container" style="display: flex;justify-content: center;">
+        <div class="enlace" style="width: 30%;margin:1em"><a href="senderismo.html"><img class="menu-imagen" src="/alojamiento/casa-albite/166424904.jpg"></a>
+        </div>
+        <div class="enlace" style="width: 30%;margin:1em"><img class="menu-imagen"  src="/alojamiento/casa-albite/170955469.jpg"></div>
+        <div class="enlace" style="width: 30%;margin:1em"><img class="menu-imagen" src="/alojamiento/casa-albite/170998416.jpg"></div>
+    </div>
+    <div class="container" style="display: flex;justify-content: center;">
+        <div class="enlace" style="width: 30%;margin:1em"><img class="menu-imagen"  src="/alojamiento/casa-albite/170955487.jpg"></div>
+        <div class="enlace" style="width: 30%;margin:1em"><img class="menu-imagen" src="/alojamiento/casa-albite/170998744.jpg"></div>
+        <div class="enlace" style="width: 30%;margin:1em"><img class="menu-imagen" src="/alojamiento/casa-albite/166424904.jpg"></div>
+    </div>
+    
+    <div class="demo-gap-half">
+        <div class="demo-gap-1">
+            <div class="jarallax" data-speed="0.2">
+                <img class="jarallax-img" src="/alojamiento/casa-albite/195452763.jpg" alt="">
+            </div>
+        </div>
+        <div class="demo-gap-2" data-speed="0">
+            <div class="jarallax">
+                <img class="jarallax-img" src="/alojamiento/casa-albite/170955479.jpg" alt="">
+            </div>
+            <div class="jarallax" data-speed="1.4">
+                <img class="jarallax-img" src="/alojamiento/casa-albite/170997841.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-gap">
+        <h1  style="text-align:left;padding: 20px" >
+            Llanera un turismo sostenible &copy; 2021
+        </h1>
+       
+    </div>
+ <footer>
+           
+                <p style="text-align:left;padding: 20px" >
+             
+                    <a  href="#" ><img src="../redes/facebook.png"style="width: 60px"></a>
+                    <a  href="#" ><img src="../redes/twiter.png"style="width: 60px"></a>
+                     <a  href="#" ><img src="../redes/instagram.png"style="width: 60px"></a>
+     </p>
+            
+        </footer>
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script type="text/javascript">
+        // object-fit polyfill run
+        objectFitImages();
+
+        /* init Jarallax */
+        jarallax(document.querySelectorAll('.jarallax'));
+
+        jarallax(document.querySelectorAll('.jarallax-keep-img'), {
+            keepImg: true,
+        });
+
+        /* init Flickity Carousel + Jarallax inside it */
+        // new Flickity( '.demo-carousel', {
+        //     initialIndex: 1,
+        //     autoPlay: 3000,
+        //     pauseAutoPlayOnHover: false,
+        //     pageDots: false,
+        //     prevNextButtons: false,
+        //     wrapAround: true
+        // });
+        // jarallax(document.querySelectorAll('.demo-carousel .jarallax'), {
+        //     elementInViewport: document.querySelectorAll('.demo-carousel')
+        // });
+
+        /* init Jarallax with jQuery */
+        // $('.jarallax').jarallax({
+        //     speed: 0.5,
+        //     imgWidth: 1366,
+        //     imgHeight: 768
+        // });
+    </script>
+</body></html>
